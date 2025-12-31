@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习党的二十届四中全会精神</title>
+    <link rel="icon" type="png" href="images/guohui.png">
+    
+    <style>
+
+        /*全局设置 */
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /*图片保持纵横比*/
+        .image-aspect-ratio-wrapper {
+            width: 100%;
+            height: 0;
+            padding-bottom: 40%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .image-aspect-ratio-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /*横幅和导航栏*/
+
+        .header {
+            background-color: #CC0000;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav li {
+            font-size: 16px;
+        }
+
+        .nav a {
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .nav a:hover {
+            background-color: #a00000;
+            color: #fff;
+        }
+
+        /*三个栏的布局*/
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start; /*确保侧边栏不会被强行拉长*/
+        }
+
+        .sidebar-left, .sidebar-right, .content {
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            border-top: 4px solid #CC0000;
+        }
+
+        /*左栏固定宽度*/
+        .sidebar-left {
+            flex: 0 0 200px; 
+        }
+
+        /*中间栏*/
+        .content {
+            flex: 1; 
+            min-width: 0; /*防止其他元素溢出撑开*/
+            overflow: hidden;
+        }
+
+        /*右侧固定宽度*/
+        .sidebar-right {
+            flex: 0 0 220px; 
+        }
+        
+        /*限制宽度并居中*/
+        .sidebar-right img {
+            display: block;
+            max-width: 160px; /*限制二维码图片大小*/
+            height: auto;
+            margin: 10px auto;
+            border: 1px solid #eee;
+            padding: 5px;
+        }
+
+        .sidebar-menu li {
+            list-style: none;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 5px;
+        }
+        .sidebar-menu a {
+            color: #333;
+            display: block;
+            font-size: 15px;
+        }
+        .sidebar-menu a:hover {
+            color: #CC0000;
+        }
+        
+        /*图片轮播特效*/
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-bottom: 50%; 
+            margin-bottom: 20px;
+            background-color: #eee;
+        }
+
+        .slider-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-item {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slide-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* =================================================== */
+        /* 5. 底部区域 */
+        /* =================================================== */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .news-list li {
+            list-style: none;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 5px;
+        }
+        .news-list a {
+            color: #333;
+            display: block;
+            font-size: 15px;
+        }
+        .news-list a:hover {
+            color: #CC0000; /*鼠标悬停字体变红效果*/
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="党徽" width="40" height="40" style="margin-right: 15px;">
+                学习党的二十届四中全会精神
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="pages/summary.html">全会概况</a></li>
+                    <li><a href="pages/form.html">问卷调查</a></li>
+                    <li><a href="pages/intro.html">AI说明</a></li>
+                    <li><a href="m.html">移动端页</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="sidebar-left">
+            <h3>相关链接</h3>
+            <ul class="sidebar-menu">
+                <li><a href="https://www.gov.cn/yaowen/liebiao/202510/content_7045444.html">中国政府网</a></li>
+                <li><a href="https://www.12371.cn/special/20jsizqh">共产党员网</a></li>
+                <li><a href="https://ztjy.ucass.edu.cn/">社科大主题教育网</a></li>
+                <li><a href="https://www.news.cn/zt/ddesjsdscqthy/index.html">新华网</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            
+            <div class="slider-container" id="imageSlider">
+                <div class="slider-wrapper">
+                    <div class="slide-item">
+                        <img src="images/leaderspeaking.jpg" alt="习近平发表讲话">
+                    </div>
+                    <div class="slide-item">
+                        <img src="images/meeting.jpg" alt="会议进行">
+                    </div>
+                </div>
+            </div>
+            
+            <h2>官方发布</h2>
+            <p>中共中央新闻发布会：介绍和解读党的二十届四中全会精神</p>
+            <div style="width: 100%; max-width: 680px; margin: 25px auto; text-align: center;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border: 3px solid #CC0000; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    <iframe 
+                        frameborder="0" 
+                        src="https://v.qq.com/txp/iframe/player.html?vid=u317613kfcu" 
+                        allowFullScreen="true" 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    </iframe>
+                </div>
+                <p style="margin-top: 10px; color: #CC0000; font-weight: bold; font-size: 14px;">
+                    视频：中共中央举行新闻发布会 介绍和解读党的二十届四中全会精神
+                </p>
+            </div>
+            
+            <section style="margin-top: 20px;">
+                <h3>最新动态</h3>
+                <ul class="news-list">
+                    <li><a href="https://www.ccdi.gov.cn/toutiaon/202511/t20251106_457212.html">中央纪委国家监委 | 深刻领会党的二十届四中全会的重大意义</a></li>
+                    <li><a href="http://www.cppcc.gov.cn/zxww/xxgc20j4zqh/home/index.shtml">中国政协 | 学习贯彻党的二十届四中全会精神</a></li>
+                    <li><a href="http://theory.people.com.cn/n1/2025/1103/c40531-40595631.html">人民网 | 深刻认识和把握党的二十届四中全会的重大意义</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <aside class="sidebar-right">
+            <h3>更多学习</h3>
+            <img src="images/xuexi.png" alt="学习强国二维码">
+            <p style="text-align: center; font-size: 14px;">微信扫一扫 学习强国</p>
+            <hr>
+            <h4>联系信息</h4>
+            <p style="font-size: 13px;">电话：(010) 8888-8888</p>
+            <p style="font-size: 13px;">地址：北京市XXXXXXXXXX</p>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>版权所有 © 2025 我也不知道 | All Rights Reserved.</p>
+            <p>技术支持：鞠文飞老师，豆包老师 | 网站备案号：京ICP备 XXXXXXXX号</p>
+            <p style="margin-top: 10px; color: #aaa;">*声明：本网站所使用的党徽、党章相关标识、图片等资料，均下载自官方发布渠道，仅用于学习党的二十届四中全会精神，不作任何商业用途</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('imageSlider');
+            if (!slider) return;
+
+            const wrapper = slider.querySelector('.slider-wrapper');
+            const slides = slider.querySelectorAll('.slide-item');
+            const slideCount = slides.length;
+            if (slideCount === 0) return;
+
+            let currentIndex = 0;
+            const intervalTime = 3000;
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                const offset = -currentIndex * 100;
+                wrapper.style.transform = `translateX(${offset}%)`;
+            }
+
+            setInterval(nextSlide, intervalTime);
+        });
+    </script>
+
+</body>
+</html>

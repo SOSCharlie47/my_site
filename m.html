@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习党的二十届四中全会精神</title>
+    <link rel="icon" type="png" href="images/guohui.png">
+
+    <style>
+        
+        /*全局设置*/
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /*响应式导航*/
+
+        .header {
+            background-color: #CC0000;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            flex-direction: column; /*移动端默认纵向*/
+            align-items: center;
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row; /*平板横向*/
+                justify-content: space-between;
+            }
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .nav a {
+            padding: 8px 12px;
+            display: block;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav a:hover {
+            background-color: #a00000;
+        }
+
+
+        /*三栏总体布局*/
+
+        .main-container {
+            max-width: 1200px;
+            margin: 10px auto;
+            padding: 0 10px;
+            display: flex;
+            flex-direction: column; /*移动端堆叠*/
+            gap: 15px;
+        }
+
+        @media (min-width: 992px) {
+            .main-container {
+                flex-direction: row; /*桌面端恢复三栏*/
+                align-items: flex-start;
+            }
+        }
+
+        .sidebar-left, .sidebar-right, .content {
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: 4px solid #CC0000;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 992px) {
+            .sidebar-left { flex: 0 0 200px; }
+            .content { flex: 1; }
+            .sidebar-right { flex: 0 0 220px; }
+        }
+
+        /*列表交互效果*/
+        .sidebar-menu li, .news-list li {
+            list-style: none;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 5px;
+        }
+        .sidebar-menu a:hover, .news-list a:hover {
+            color: #CC0000;
+        }
+
+
+        /*图片轮播和视频播放效果*/
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-bottom: 56.25%; /*比例适配手机*/
+            background-color: #eee;
+            margin-bottom: 15px;
+        }
+
+        .slider-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .slide-item { flex: 0 0 100%; }
+        .slide-item img { width: 100%; height: 100%; object-fit: cover; }
+
+        .video-wrapper {
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden; 
+            border: 2px solid #CC0000;
+            margin: 15px 0;
+        }
+        .video-wrapper iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        }
+
+        .sidebar-right img {
+            display: block;
+            max-width: 140px;
+            margin: 10px auto;
+        }
+
+
+        /*底部区域*/
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="党徽" width="30" height="30" style="margin-right: 10px;">
+                学习二十届四中全会精神
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="m.html">首页</a></li>
+                    <li><a href="mobile/summary.html">全会概况</a></li>
+                    <li><a href="mobile/form.html">问卷</a></li>
+                    <li><a href="mobile/intro.html">AI说明</a></li>
+                    <li><a href="index.html">电脑端页</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <main class="content">
+            <div class="slider-container" id="imageSlider">
+                <div class="slider-wrapper">
+                    <div class="slide-item"><img src="images/leaderspeaking.jpg" alt="讲话"></div>
+                    <div class="slide-item"><img src="images/meeting.jpg" alt="会议"></div>
+                </div>
+            </div>
+            
+            <h2 style="font-size: 1.2em;">官方发布</h2>
+            <div class="video-wrapper">
+                <iframe src="https://v.qq.com/txp/iframe/player.html?vid=u317613kfcu" allowFullScreen="true" frameborder="0"></iframe>
+            </div>
+            
+            <section>
+                <h3>最新动态</h3>
+                <ul class="news-list">
+                    <li><a href="https://www.ccdi.gov.cn/toutiaon/202511/t20251106_457212.html">中央纪委国家监委 | 深刻领会党的二十届四中全会的重大意义</a></li>
+                    <li><a href="http://www.cppcc.gov.cn/zxww/xxgc20j4zqh/home/index.shtml">中国政协 | 学习贯彻党的二十届四中全会精神</a></li>
+                    <li><a href="http://theory.people.com.cn/n1/2025/1103/c40531-40595631.html">人民网 | 深刻认识和把握党的二十届四中全会的重大意义</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <aside class="sidebar-left">
+            <h3>相关链接</h3>
+            <ul class="sidebar-menu">
+                <li><a href="https://www.gov.cn/">中国政府网</a></li>
+                <li><a href="https://www.12371.cn/">共产党员网</a></li>
+                <li><a href="https://www.news.cn/">新华网</a></li>
+            </ul>
+        </aside>
+
+        <aside class="sidebar-right">
+            <h3>更多学习</h3>
+            <img src="images/xuexi.png" alt="二维码">
+            <p style="text-align: center; font-size: 13px;">微信扫一扫 学习强国</p>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 仅供学习 | 没有版权</p>
+        <p>技术支持：鞠文飞老师 ＆ 豆包老师</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const wrapper = document.querySelector('.slider-wrapper');
+            const slides = document.querySelectorAll('.slide-item');
+            if (!wrapper || slides.length === 0) return;
+            let currentIndex = 0;
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                wrapper.style.transform = `translateX(${-currentIndex * 100}%)`;
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

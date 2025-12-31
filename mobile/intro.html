@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI使用说明-学习党的二十届四中全会精神</title>
+    <link rel="icon" type="png" href="../images/guohui.png">
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.8;
+        }
+        .header {
+            background-color: #CC0000;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-top: 5px solid #CC0000;
+        }
+        h1 { color: white; margin: 0; }
+        h2 { color: #CC0000; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .feature-box {
+            background: #fff5f5;
+            border-left: 4px solid #CC0000;
+            padding: 15px;
+            margin: 20px 0;
+            overflow: hidden; 
+        }
+
+        /* 确保图片不超出框架边缘 */
+        .feature-box img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #CC0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-btn:hover { background-color: #a00000; }
+
+        /* =================================================== */
+        /* 移动端响应式布局优化 (CSS Media Queries) */
+        /* =================================================== */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 10px;
+            }
+            h1 {
+                font-size: 20px; /* 缩小手机端标题字号 */
+            }
+            .container {
+                width: 92%;      /* 手机端占满大部分屏幕宽度 */
+                margin: 15px auto;
+                padding: 20px;   /* 缩小内边距 */
+            }
+            h2 {
+                font-size: 18px;
+            }
+            .feature-box {
+                padding: 12px;
+                font-size: 14px; /* 手机端字号微调 */
+            }
+            .back-btn {
+                width: 100%;     /* 按钮在手机端加宽至满屏，方便点击 */
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>AI 技术辅助说明</h1>
+    </header>
+
+    <div class="container">
+        <h2>本网站中AI的贡献</h2>
+        <p>在本线下作业的制作过程中，AI主要在以下技术环节提供了支持：</p>
+        
+        <div class="feature-box">
+            <strong>响应式布局优化：</strong>
+            借助AI生成了CSS Media Queries，确保网页在手机、平板和电脑端都能完美适配。
+            使用代码如下：
+            <img src="../images/CSSMQ.png" alt="CSS Media Queries部分代码">
+        </div>
+        
+
+        <div class="feature-box">
+            <strong>优化整体布局：</strong>
+            在设计网页布局的过程中，我发现自己编写的整体布局过于理想和简单，比如插入图片后，图片会改变不同栏的宽度和长度，为了固定每栏格式，我使用AI辅助编写了整体布局代码，固定每个栏目的占据比例，使图片文字和对应的栏目格式一致。
+            部分代码如下：
+            <img src="../images/containers.png" alt="三栏布局部分代码">
+            <p>另外，由于底端栏目实在不知道写些什么，但是加上会显得整体网页看起来专业很多，于是照猫画虎求助AI编写了以下内容：</p>
+            <img src="../images/footer.png" alt="底端栏目">
+        </div>
+
+        <div class="feature-box">
+            <strong>两张图片的轮播脚本：</strong>
+            本人手写的CSS代码默认需要三张图片才能实现轮播，然而图片素材有限，仅有的两张图片会导致轮播卡顿或留白。于是借助AI编写了轻量级JavaScript驱动，实现了图片无缝滚动和自动播放。
+            部分代码如下：
+            <img src="../images/JS.png" alt="JS轮播部分代码">
+        </div>
+
+        <h2>最后我想说：</h2>
+        <p>这个作业除了表单网页部分是主要人工编写的（当然后期还是让AI优化了下视觉效果），其余网页绝大部分是由AI编写的...我只负责主导设计框架，而AI负责具体的技术实现与代码优化。不过这门课将我带进了程序与代码的大门（实则大一学的全忘了），也正是因为这门课，让我掌握了基础的网页制作的编写逻辑与语言，让我在对AI生成指令和后续对AI生成作品的修改意见上有了更加清晰明确的思路。最后我想谢谢老师和这门课，让我度过了非常充实、收获颇丰的一个学期。祝老师工作顺利，生活愉快！</p>
+
+        <a href="../m.html" class="back-btn">返回首页</a>
+    </div>
+
+</body>
+</html>
